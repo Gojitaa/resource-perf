@@ -11,7 +11,7 @@ const routes = {
 	'#/movies/{id}': MovieDetails,
 }*/
 
-const App = ({ root }) => {
+const App = ({ root, initLoginTracking }) => {
 	window.addEventListener("popstate", () =>
   	render(root)
   );
@@ -25,7 +25,7 @@ const App = ({ root }) => {
 		/*const page = routes[location.hash || '/'];
 		page({ navigate }).render(parent);*/
 		if(!location.hash || location.hash === '/') {
-			Login({ navigate }).render(parent)
+			Login({ navigate, initLoginTracking }).render(parent)
 			return;
 		}
 

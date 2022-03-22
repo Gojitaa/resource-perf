@@ -4,7 +4,7 @@ const onLogin = async navigate => {
 	navigate('#/movies')	
 }
 
-const Login = ({ navigate }) => {
+const Login = ({ navigate, initLoginTracking }) => {
 	const template = () => `
 		<main class='${app}'>
 			<h1>Movie Finder</h1>
@@ -13,7 +13,11 @@ const Login = ({ navigate }) => {
 	`
 	const render = parent => {
 		parent.innerHTML = template();
-		parent.querySelector('#login').addEventListener('click', () => onLogin(navigate))
+		parent.querySelector('#login')
+			.addEventListener('click', () => {
+				initLoginTracking()
+				onLogin(navigate)
+			})
 	}
 
 	return {

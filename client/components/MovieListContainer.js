@@ -14,9 +14,15 @@ const MovieListContainer = ({ navigate }) => {
 		`
 
 	const render = async parent => {
-		parent.innerHTML = template();
+		parent.innerHTML = template()
 		const moviesResp = await getMovies()
-		const movies = _.sortBy(moviesResp.items, ['title']);
+		const movies = _.sortBy(moviesResp.items, ['title']) 
+		/*const longtask = () => {
+			for(let i=0; i<1e4; i++) {
+				movies = _.sortBy(moviesResp.items, ['title']);
+			}
+		}
+		longtask();*/
 		MovieList({ movies }).render(parent.querySelector('.list-container'))
 	}
 

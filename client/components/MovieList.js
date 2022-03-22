@@ -6,7 +6,7 @@ const MovieList = ({ movies }) => {
 	const render = parent => {
 		parent.innerHTML = template();
 		movies
-			.map((movie) => MovieListItem(movie).render(parent.querySelector('.list')))
+			.map((movie) => MovieListItem(movie).render(parent.querySelector(`.${list}`)))
 	}
 
 	return {

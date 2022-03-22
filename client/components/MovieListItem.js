@@ -5,7 +5,7 @@ const MovieListItem = ({ title, image }) => {
 		`<li class='${listItem}'>
 			<div>${title}</div>
 			<div class='movie-image-container'>
-				<img class='movie-image' src='${image}' alt='${title}'/>
+				<img class='movie-image' width='200px' elementtiming='list-item' src='${image}' alt='${title}'/>
 			</div>
 		</li>`
 	const render = parent => {
